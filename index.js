@@ -12,23 +12,23 @@ import messaging from '@react-native-firebase/messaging';
 // onMessage는 앱이 종료되었을 때 받아오지 않아, 
 // setBackgroundMessageHandler을 사용해야합니다.
 messaging().setBackgroundMessageHandler(async remoteMessage => {
-    //console.log('Message handled in the background!', remoteMessage);
+   console.log('Message handled in the background!', remoteMessage);
 });
 
-function HeadlessCheck() {
+// function HeadlessCheck() {
     
-    const isBackgroundIOS = new Promise((resolve, reject) => { 
-        messaging().getIsHeadless().then(isHeadless => {
-            if (isHeadless) {
-                resolve(false)
-            }
-        });   
+//     const isBackgroundIOS = new Promise((resolve, reject) => { 
+//         messaging().getIsHeadless().then(isHeadless => {
+//             if (isHeadless) {
+//                 resolve(false)
+//             }
+//         });   
 
-    })
-    return <App />;
+//     })
+//     return <App />;
 
-}
+// }
   
   
 
-AppRegistry.registerComponent(appName, () => HeadlessCheck);
+AppRegistry.registerComponent(appName, () => App);
